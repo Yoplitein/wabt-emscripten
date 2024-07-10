@@ -508,7 +508,7 @@ function(wabt_executable)
 
   if (EMSCRIPTEN)
     set(EXTRA_LINK_FLAGS
-      "${EXTRA_LINK_FLAGS} -sNODERAWFS -Oz -sALLOW_MEMORY_GROWTH"
+      "${EXTRA_LINK_FLAGS} -sEXPORT_ES6=1  -sINVOKE_RUN=0 -sEXPORT_ALL=1 -sEXPORTED_RUNTIME_METHODS=callMain -Oz -sALLOW_MEMORY_GROWTH"
     )
   endif ()
 
